@@ -8,6 +8,22 @@
       private $conta;
       private $saldo;
 
+     public function getAgencia()
+{
+    return $this->agencia;
+}
+
+public function getConta()
+{
+    return $this->conta;
+}
+
+public function getTipoConta()
+{
+    return $this->tipoDeConta;
+}
+
+
       private array $movimentacao = [];
 
       public function __construct($tipoDeConta, $agencia, $conta)

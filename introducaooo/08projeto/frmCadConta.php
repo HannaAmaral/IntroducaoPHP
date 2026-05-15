@@ -7,6 +7,7 @@
     require_once("08itemExtrato.php");
 
     session_start();
+    
 
     if(!isset($_SESSION["contas"])){
         $_SESSION["contas"] = [];
@@ -26,6 +27,13 @@
             $reajuste = (float) $_POST["reajuste"];
 
             $_SESSION["contas"][] = new poupanca($agencia, $conta, $saldoInicial, $reajuste);
+
+            setcookie(
+                "ultimaConta",
+                count($_SESSION["contas"]) - 1,
+                time() + 3600
+            );
+
         } elseif ($tipoConta == "especial") {
 
             $limiteEspecial = (float) $_POST["limiteEspecial"];
