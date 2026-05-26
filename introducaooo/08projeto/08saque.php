@@ -7,10 +7,9 @@ require_once("08itemExtrato.php");
 
 session_start();
 
-
 // Verifica se existem contas
-if (!isset($_SESSION["contas"])) 
-{
+if (!isset($_SESSION["contas"])) {
+
     echo "Nenhuma conta cadastrada!";
     exit;
 }
@@ -25,8 +24,8 @@ setcookie("ultima_conta", $indiceConta, time() + 86400, "/");
 // Recupera conta selecionada
 $conta = $_SESSION["contas"][$indiceConta];
 
-// Realiza depósito
-$conta->deposito($valor);
+// Realiza saque
+$conta->saque($valor);
 
 // Atualiza sessão
 $_SESSION["contas"][$indiceConta] = $conta;
@@ -37,7 +36,8 @@ $_SESSION["contas"][$indiceConta] = $conta;
 //     time() + 3600
 // );
 
-echo "<h2>Depósito realizado com sucesso!</h2>";
+
+echo "<h2>Saque realizado com sucesso!</h2>";
 
 ?>
 

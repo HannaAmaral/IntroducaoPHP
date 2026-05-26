@@ -1,28 +1,30 @@
-<?php 
+<?php
 
-require_once("08conta.php");
-require_once("08poupanca.php");
-require_once("08especial.php");
-require_once("08itemExtrato.php");
+    require_once("08conta.php");
+    require_once("08poupanca.php");
+    require_once("08especial.php");
+    require_once("08itemExtrato.php");
 
-session_start();
+    session_start();
 
-echo "<h2>Extrato das Contas</h2>";
+    echo "<h2>Extrato das Contas</h2>";
 
-if (isset($_SESSION["contas"])) {
-
-    foreach ($_SESSION["contas"] as $conta){
-        $conta->imprimeExtrato();
-        echo "<br><br>";
-
+    if(isset($_SESSION["contas"]))
+    {
+        foreach($_SESSION["contas"] as $conta)
+        {
+            $conta->imprimeExtrato();
+            echo "<br><br>";
+        }
     }
-}
- else {
-    echo "Nenhuma conta cadastrada!";
-}
+    else
+    {
+        echo "Nenhuma conta cadastrada!";
+    }
 
-echo '<br>
-<a href="08menu.html">
-    <button>Voltar ao Menu</button>
-</a>'
+    echo '<br>
+    <a href="08menu.html">
+        <button>Voltar ao Menu</button>
+    </a>';
+
 ?>

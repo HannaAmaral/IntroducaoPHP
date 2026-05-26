@@ -1,13 +1,12 @@
-
- <?php
+<?php
  
- class Especial extends Conta
+ class especial extends conta
  {
     public $limiteEspecial;    
 
     public function __construct($agencia, $conta, $saldoInicial, $limiteEspecial)
     {
-		parent ::__construct('especial',$agencia, $conta);	
+		parent ::__construct('ESPECIAL',$agencia, $conta);	
 		$this-> deposito($saldoInicial);
 		$this-> limiteEspecial = $limiteEspecial;		
     } 
@@ -16,7 +15,6 @@
 	{
 		return $this-> saldo() + $this-> limiteEspecial; 
 	}
-    
  }
-
+ 
  ?>

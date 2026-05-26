@@ -12,6 +12,7 @@ if(isset($_COOKIE["ultima_conta"]))
     $ultimaConta = (int) $_COOKIE["ultima_conta"];
 }
 
+
 ?>
 
 <!DOCTYPE html>
@@ -19,12 +20,12 @@ if(isset($_COOKIE["ultima_conta"]))
 
 <head>
     <meta charset="UTF-8">
-    <title>Depósito</title>
+    <title>Saque</title>
 </head>
 
 <body>
 
-    <h2>Realizar Depósito</h2>
+    <h2>Realizar Saque</h2>
 
     <?php
 
@@ -39,7 +40,7 @@ if(isset($_COOKIE["ultima_conta"]))
 
     ?>
 
-        <form action="08deposito.php" method="post">
+        <form action="08saque.php" method="post">
 
             <label>Selecione a Conta:</label>
             <br><br>
@@ -99,7 +100,7 @@ if(isset($_COOKIE["ultima_conta"]))
 
             <br><br>
 
-            <label>Valor do Depósito:</label>
+            <label>Valor do Saque:</label>
             <br><br>
 
             <input
@@ -111,7 +112,7 @@ if(isset($_COOKIE["ultima_conta"]))
             <br><br>
 
             <button type="submit">
-                Depositar
+                Sacar
             </button>
 
         </form>

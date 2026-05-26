@@ -1,13 +1,12 @@
+<?php
 
- <?php
-
- class Poupanca extends Conta
+ class poupanca extends conta
  {
-    private float $reajuste;
+    public $reajuste;
 
-    public function __construct(string $agencia, string $conta, string $saldoInicial, float $reajuste)
+    public function __construct($agencia, $conta, $saldoInicial, $reajuste)
     {
-    	parent ::__construct('poupança',$agencia, $conta);	
+    	parent ::__construct('POUPANCA',$agencia, $conta);	
 		$this-> deposito($saldoInicial);
 		$this-> reajuste = $reajuste;		
     } 
